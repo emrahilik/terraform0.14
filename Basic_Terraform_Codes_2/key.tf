@@ -1,6 +1,6 @@
-resource "aws_key_pair" "deployer2" {    # for interpollation with keys and ec2 instance
+resource "aws_key_pair" "deployer2" { # for interpollation with keys and ec2 instance
   key_name   = "deployer2"
-  public_key = file ("~/.ssh/id_rsa.pub") 
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
 
