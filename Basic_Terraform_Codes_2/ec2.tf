@@ -3,7 +3,7 @@ resource "aws_instance" "web" {
   instance_type               = "t2.micro"
   key_name                    = aws_key_pair.deployer2.key_name
   associate_public_ip_address = true # optional
-  vpc_security_group_ids      = [aws_security_group.allow_tls.id]
+  vpc_security_group_ids      = [aws_security_group.yusuf.id]
   # ids or id is important here. please make sure about vpc. If need we can request multible
   # security group id at the same time. But maximum 5 security group.
   availability_zone = "us-east-1a"        # optional
@@ -12,9 +12,9 @@ resource "aws_instance" "web" {
 
   tags = {
 
-    "name" = "Yusuf terraform "
-    "name" = "Yusuf terraform "
-    "name" = "Yusuf terraform "
+    "name" = "joseph terraform "
+    "name" = "joseph terraform "
+    "name" = "joseph terraform "
   }
 }
 
