@@ -1,4 +1,4 @@
-resource "null_resource" "script" {
+resource "null_resource" "script" {   
     triggers = {
         always_run = timestamp()
     }

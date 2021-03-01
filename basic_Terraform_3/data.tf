@@ -17,6 +17,8 @@ data "aws_ami" "ubuntu" {
 } 
 # between line 1 and 16 pull iam id from aws and output show me iam id 
 
+
+
 output "UBUNTU_ID" {
     value = data.aws_ami.ubuntu.id     #output show me iam id 
 }
@@ -62,6 +64,7 @@ resource "aws_instance" "yusufemrah" {
     ami = data.aws_ami.centos.id 
     instance_type = "t2.micro"
     key_name = aws_key_pair.deployer3.key_name
+    vpc_security_group_ids      = [aws_security_group.yusuf.id]
     
     
     provisioner "remote-exec" {
