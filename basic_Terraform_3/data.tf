@@ -38,7 +38,24 @@ data "aws_ami" "centos" {
    owners = ["679593333241"]  # Canonical
 
 } 
+  
+
+
 
 output "CENTOS_ID" {
     value = data.aws_ami.centos.id     #output show me iam id 
+}
+
+data "aws_availability_zones" "all" {}
+
+output "AZ" {
+   value = data.aws_availability_zones.all.names   #output show availablity zones  
+
+  #"us-east-1a",
+  #"us-east-1b",
+  #"us-east-1c",
+  #"us-east-1d",
+  #"us-east-1e",
+  #"us-east-1f",   also we can spicify all AZ's instead of value <data.aws_availability_zones.all.names> 
+
 }
