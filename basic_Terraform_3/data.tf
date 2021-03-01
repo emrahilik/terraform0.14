@@ -59,3 +59,39 @@ output "AZ" {
   #"us-east-1f",   also we can spicify all AZ's instead of value <data.aws_availability_zones.all.names> 
 
 }
+resource "aws_instance" "yusufemrah" {
+    ami = data.aws_ami.centos.id 
+    instance_type = "t2.micro"
+    key_name = aws_key_pair.deployer3.key_name
+    
+    
+    provisioner "remote-exec" {
+    #script = file("${path.module}/user.sh")  # you have to put path sh file location.
+   # you use your comment with script or list as a inline 
+   inline = [
+    "sudo yum install httpd -y",
+   "sudo systemctl start httpd",
+   ]
+
+    connection {
+    type     = "ssh"
+    user     = "centos"
+    password = "file(~/.ssh/id_rsa)"
+    host     = aws_instance.yusufemrah.public_ip  
+    }
+    }
+
+    provisioner "remote-exec" {
+      source = "user.sh"
+      destination = "/tmp/user.sh"
+
+    connection {
+    type     = "ssh"
+    user     = "centos"
+    password = "file(~/.ssh/id_rsa)"
+    host     = aws_instance.yusufemrah.public_ip  
+    }
+  
+  }
+}
+
