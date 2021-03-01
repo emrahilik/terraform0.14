@@ -50,7 +50,7 @@ data "aws_availability_zones" "all" {}
 
 output "AZ" {
    value = data.aws_availability_zones.all.names   #output show availablity zones  
-
+}
   #"us-east-1a",
   #"us-east-1b",
   #"us-east-1c",
@@ -58,7 +58,6 @@ output "AZ" {
   #"us-east-1e",
   #"us-east-1f",   also we can spicify all AZ's instead of value <data.aws_availability_zones.all.names> 
 
-}
 resource "aws_instance" "yusufemrah" {
     ami = data.aws_ami.centos.id 
     instance_type = "t2.micro"
