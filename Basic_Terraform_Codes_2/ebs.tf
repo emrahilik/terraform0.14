@@ -1,7 +1,7 @@
 resource "aws_ebs_volume" "yusufebs" {
-  availability_zone = "us-east-1a"  # you have to specify availablity zone.
-                                    # ebs valume should be in the same az
-  size              = 100
+  availability_zone = "us-east-1a" # you have to specify availablity zone.
+  # ebs valume should be in the same az
+  size = 100
 }
 
 
