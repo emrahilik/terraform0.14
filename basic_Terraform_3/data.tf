@@ -13,7 +13,7 @@ data "aws_ami" "ubuntu" {
        values = ["hvm"]
    }
 
-   owners = ["099720109477"]  # Canonical
+   #owners = ["099720109477"]  # Canonical
 
 } 
 # between line 1 and 16 pull iam id from aws and output show me iam id 

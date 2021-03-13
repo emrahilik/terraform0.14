@@ -16,6 +16,14 @@ data "aws_ami" "image" {
 
 data "aws_availability_zones" "all" {} # this code pulls all az from regigion which is defined on provider.tf 
 
-#output "AZ" {
-#    value = data.aws_availability_zones.all.names 
-#}
+output "AZ" {
+    value = data.aws_availability_zones.all.names 
+}
+
+
+# you can use your own ami as a golden image 
+
+### data "aws_ami" "image" {
+#  most_recent = true
+#  owners = ["self"] # you can use your own ami as a golden image 
+##}
