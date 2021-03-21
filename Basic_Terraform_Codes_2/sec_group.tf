@@ -10,7 +10,7 @@ resource "aws_security_group" "yusuf" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    description = "hhtp from VPC"
+    description = "http from VPC"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
