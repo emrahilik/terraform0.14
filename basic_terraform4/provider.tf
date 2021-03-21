@@ -1,3 +1,8 @@
 provider "aws" {
-  region = "us-east-1"
+  region =  var.aws_region   #  to use "us-east-1"
 }
+
+
+#  to use "us-east-1" or other region that 
+#  it is easy way to create dynamic code with variable :)
+#  you have to create the variable.tf file and put the "aws_region"
