@@ -3,19 +3,19 @@ resource "aws_autoscaling_group" "enes" {
   desired_capacity   = var.desired_capacity
   max_size           = var.max_size
   min_size           = var.max_size
-  mixed_instances_policy {  # mixed instances policy allows us to create different type of instances.
+  mixed_instances_policy { # mixed instances policy allows us to create different type of instances.
     launch_template {
       launch_template_specification {
         launch_template_id = aws_launch_template.enes.id
       }
 
-      override {   # you can add different type of instances
+      override { # you can add different type of instances
         instance_type     = "c4.large"
-        weighted_capacity = "10"  # you can specify the number of instance type for ASG
+        weighted_capacity = "10" # you can specify the number of instance type for ASG
       }
 
-      override {      # you can add different type of instances   
-        instance_type     = "c3.large"  
+      override { # you can add different type of instances   
+        instance_type     = "c3.large"
         weighted_capacity = "15" # you can specify the number of instance type for ASG
       }
     }
