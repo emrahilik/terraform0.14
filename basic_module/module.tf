@@ -10,15 +10,15 @@ module "wordpress"{
 }
 
 module "joomla"{
-    source = "../basic_terraform4"  # or give the github relative path 
-    aws_region = "us-east-1"
+    source = "../basic_terraform4"  #  give the github relative path or terrraform code path 
+    aws_region = "us-east-2"
     desired_capacity   = 1
     max_size           = 1
     min_size           = 1
 }
 
 module "apache"{
-    source = "../basic_terraform4"  # or give the github relative path 
+    source = "../basic_terraform4"  # give the github relative path or terrraform code path
     aws_region = "us-east-1"
     desired_capacity   = 1
     max_size           = 1
