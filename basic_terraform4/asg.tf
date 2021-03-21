@@ -1,4 +1,4 @@
-resource "aws_autoscaling_group" "example" {
+resource "aws_autoscaling_group" "enes" {
   availability_zones = data.aws_availability_zones.all.names
   desired_capacity   = 1
   max_size           = 1
@@ -6,7 +6,7 @@ resource "aws_autoscaling_group" "example" {
   mixed_instances_policy {  # mixed instances policy allows us to create different type of instances.
     launch_template {
       launch_template_specification {
-        launch_template_id = aws_launch_template.yusuf_emrah.id
+        launch_template_id = aws_launch_template.enes.id
       }
 
       override {   # you can add different type of instances

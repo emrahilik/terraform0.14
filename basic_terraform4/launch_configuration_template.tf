@@ -1,5 +1,5 @@
-resource "aws_launch_template" "yusuf_emrah" {  
-  name          = "yusuf_emrah"
+resource "aws_launch_template" "enes" {  
+  name_prefix          = "enes"
   image_id      = data.aws_ami.image.id
   instance_type = "t2.micro"
 }
