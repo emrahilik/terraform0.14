@@ -5,6 +5,7 @@ resource "aws_launch_template" "enes" {
   key_name = aws_key_pair.asg-key-pair.key_name   # this values comes from key.tf file <
                                                   # "aws_key_pair" "asg-key-pair" 
                                                   # key_name >
+  user_data = filebase64("${path.module}/userdata.sh") 
 }
 
 
